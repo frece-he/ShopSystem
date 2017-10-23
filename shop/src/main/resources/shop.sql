@@ -10,6 +10,46 @@ DROP INDEX idx_create_time ON SUCCESS_KILLED;
 DROP TABLE SECKILL; 
 DROP TABLE SUCCESS_KILLED;
 
+
+CREATE TABLE LOGIN(
+	`user_name` 				VARCHAR(50)				NOT NULL  UNIQUE COMMENT'user name', 
+	`email`			 				VARCHAR(90)				NOT NULL  UNIQUE COMMENT'email address',
+	`password`					VARCHAR(50)				NOT NULL  COMMENT'password', 
+	`status`						INT(5)					NOT NULL  COMMENT'status', 
+)
+ENGINE=INNODB  
+AUTO_INCREMENT=100000 
+DEFAULT CHARSET=utf8 
+COMMENT 'login table';	
+
+
+CREATE TABLE REGISTRATION(
+	`user_id` 					BIGINT							NOT NULL AUTO_INCREMENT COMMENT'user id', 
+	`user_name` 				VARCHAR(50)				NOT NULL  UNIQUE COMMENT'user name', 
+	`email`			 				VARCHAR(90)				NOT NULL  UNIQUE COMMENT'email address',	
+	`phone_num` 			VARCHAR(50)				NOT NULL COMMENT'user name', 	
+	`receiving_add1`		VARCHAR(300)			NOT NULL COMMENT'receiving address1', 
+	`receiving_add2`		VARCHAR(300)			COMMENT'receiving address2', 
+	`gender`						VARCHAR(5)					COMMENT'gender', 
+	`birthday` 					DATE								COMMENT'date of birth', 
+	`reg_time` 					TIMESTAMP					NOT NULL  COMMENT'registration time', 
+	`lst_chg_time` 			TIMESTAMP					NOT NULL  COMMENT'last change time', 
+	PRIMARY KEY(`user_id`),
+	KEY idx_user_name(`user_name`),
+	KEY idx_email(`email`),
+)
+ENGINE=INNODB  
+AUTO_INCREMENT=1000000 
+DEFAULT CHARSET=utf8 
+COMMENT 'registration table';	
+
+
+
+
+
+
+
+
 CREATE TABLE SECKILL(
 	`seckill_id`		BIGINT 					NOT NULL AUTO_INCREMENT COMMENT'stock id', 
 	`pro_name`	VARCHAR(120) 	NOT NULL COMMENT'product name',

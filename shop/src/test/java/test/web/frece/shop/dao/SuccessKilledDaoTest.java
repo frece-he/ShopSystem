@@ -20,13 +20,14 @@ public class SuccessKilledDaoTest {
 	
 	@Test
 	public void testInsertSuccessKilled()throws Exception {
-		int res = successKilledDao.insertSuccessKilled(100000, "frece");
+		int res = successKilledDao.insertSuccessKilled(100001, "frece", 0);
 		System.out.println(res);
 	}
 
 	@Test
 	public void testQueryByIdWithSeckill()throws Exception {
 		System.out.println(successKilledDao.queryByIdWithSeckill(100000, "frece") );
+		System.out.println(successKilledDao.queryByIdWithSeckill(100001, "frece") );
 	}
 
 }
