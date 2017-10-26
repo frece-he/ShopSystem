@@ -70,3 +70,22 @@ myApp.config(function($httpProvider) {
 				: data;
 	}];
 });
+
+$(function(){
+	$(window).resize(function() {
+		var winW = window.innerWidth;
+		if(winW < 992){
+			$("#homeNav-toggle").css("display","block");
+			$(".homeNav").slideUp();
+		}else{
+			$("#homeNav-toggle").css("display","none");
+			$(".homeNav").slideDown();
+		}
+	})
+});
+
+
+$(document).on("click", "#homeNav-toggle", function() {
+   $(".homeNav").slideToggle();
+});
+
