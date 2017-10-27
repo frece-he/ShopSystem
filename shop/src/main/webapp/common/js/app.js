@@ -15,10 +15,7 @@ myApp.config(['$routeProvider', function($routeProvider) {
 		templateUrl : 'mainpage/login/template/login.html',
 		controller : 'loginController'
 	});
-	
-	$routeProvider.otherwise({
 
-	});
 
 }]);
 
@@ -70,3 +67,6 @@ myApp.config(function($httpProvider) {
 				: data;
 	}];
 });
+
+
+
