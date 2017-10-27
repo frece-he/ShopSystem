@@ -1,22 +1,52 @@
-<div class="home">
-	<ul class="rowul homeNav">
-		<li>
+<div class="container">
+	<div id="homeNavHeader">
+		<span class="homeNavTitle">My Shop</span>
+		<button type="button" id="homeNavToggle" class="btn btn-default fr">
+		            <span class="glyphicon glyphicon-align-justify"> </span>
+		</button>
+		<div class="clear"></div>
+	</div>
+
+	<ul class="row homeNav">
+		<li class="col-md-2">
 			<a href="#">Model1</a>
 		</li>
-		<li>
-			<a href="#">Model2</a>
+		<li class="col-md-2">
+			<a href="">Model2</a>
 		</li>
-		<li>
-			<a href="#">Model3</a>
+		<li class="col-md-2">
+			<a href="">Model3</a>
 		</li>
-		<li>
-			<a href="#">Model4</a>
+		<li class="col-md-2">
+			<a href="">Model4</a>
 		</li>
-		<li>
-			<a href="#">Model5</a>
+		<li class="col-md-2">
+			<a href="">Model5</a>
 		</li>
-		<li class="br-r">
-			<a href="#">Model6</a>
+		<li class="col-md-2">
+			<a href="">Model6</a>
 		</li>
 	</ul>
+
 </div>
+
+<script type="text/javascript">
+	$(function() {
+		$("#homeNavToggle").click(function() {
+			$(".homeNav").slideToggle();
+		})
+
+		$(window).resize(function() {
+			var winW = window.innerWidth;
+			if(winW < 992) {
+				$("#homeNavHeader").css("display", "block");
+				$(".homeNav").css("display", "none");
+			} else {
+				$("#homeNavHeader").css("display", "none");
+				$(".homeNav").css("display", "block");
+			}
+		});
+		$(window).resize();
+
+	});
+</script>
